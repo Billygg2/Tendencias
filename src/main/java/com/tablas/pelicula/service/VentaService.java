@@ -23,11 +23,11 @@ public class VentaService {
     }
 
     public Venta getVentaById(Long id) {
-        return ventaRepository.findById(id).orElseThrow(() -> new RuntimeException("Venta not found"));
+        return ventaRepository.findById(id).orElseThrow(() -> new RuntimeException("Venta no encontrado"));
     }
 
     public Venta updateVenta(Long id, Venta ventaDetails) {
-        Venta venta = ventaRepository.findById(id).orElseThrow(() -> new RuntimeException("Venta not found"));
+        Venta venta = ventaRepository.findById(id).orElseThrow(() -> new RuntimeException("Venta no encontrado"));
         venta.setFechaVenta(ventaDetails.getFechaVenta());
         venta.setTotalVenta(ventaDetails.getTotalVenta());
         venta.setCliente(ventaDetails.getCliente());
@@ -35,7 +35,7 @@ public class VentaService {
     }
 
     public void deleteVenta(Long id) {
-        Venta venta = ventaRepository.findById(id).orElseThrow(() -> new RuntimeException("Venta not found"));
+        Venta venta = ventaRepository.findById(id).orElseThrow(() -> new RuntimeException("Venta no encontrado"));
         ventaRepository.delete(venta);
     }
 }

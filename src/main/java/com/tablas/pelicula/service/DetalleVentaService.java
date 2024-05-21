@@ -23,11 +23,11 @@ public class DetalleVentaService {
     }
 
     public DetalleVenta getDetalleVentaById(Long id) {
-        return detalleVentaRepository.findById(id).orElseThrow(() -> new RuntimeException("DetalleVenta not found"));
+        return detalleVentaRepository.findById(id).orElseThrow(() -> new RuntimeException("DetalleVenta no encontrado"));
     }
 
     public DetalleVenta updateDetalleVenta(Long id, DetalleVenta detalleVentaDetails) {
-        DetalleVenta detalleVenta = detalleVentaRepository.findById(id).orElseThrow(() -> new RuntimeException("DetalleVenta not found"));
+        DetalleVenta detalleVenta = detalleVentaRepository.findById(id).orElseThrow(() -> new RuntimeException("DetalleVenta no encontrado"));
         detalleVenta.setCantidad(detalleVentaDetails.getCantidad());
         detalleVenta.setPrecioUnitario(detalleVentaDetails.getPrecioUnitario());
         detalleVenta.setVenta(detalleVentaDetails.getVenta());
@@ -36,7 +36,7 @@ public class DetalleVentaService {
     }
 
     public void deleteDetalleVenta(Long id) {
-        DetalleVenta detalleVenta = detalleVentaRepository.findById(id).orElseThrow(() -> new RuntimeException("DetalleVenta not found"));
+        DetalleVenta detalleVenta = detalleVentaRepository.findById(id).orElseThrow(() -> new RuntimeException("DetalleVenta no encontrado"));
         detalleVentaRepository.delete(detalleVenta);
     }
 }

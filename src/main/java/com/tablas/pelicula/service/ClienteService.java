@@ -23,11 +23,11 @@ public class ClienteService {
     }
 
     public Cliente getClienteById(Long id) {
-        return clienteRepository.findById(id).orElseThrow(() -> new RuntimeException("Cliente not found"));
+        return clienteRepository.findById(id).orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
     }
 
     public Cliente updateCliente(Long id, Cliente clienteDetails) {
-        Cliente cliente = clienteRepository.findById(id).orElseThrow(() -> new RuntimeException("Cliente not found"));
+        Cliente cliente = clienteRepository.findById(id).orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
         cliente.setNombre(clienteDetails.getNombre());
         cliente.setApellido(clienteDetails.getApellido());
         cliente.setEmail(clienteDetails.getEmail());
@@ -38,7 +38,7 @@ public class ClienteService {
     }
 
     public void deleteCliente(Long id) {
-        Cliente cliente = clienteRepository.findById(id).orElseThrow(() -> new RuntimeException("Cliente not found"));
+        Cliente cliente = clienteRepository.findById(id).orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
         clienteRepository.delete(cliente);
     }
 }

@@ -23,11 +23,11 @@ public class PeliculaService {
     }
 
     public Pelicula getPeliculaById(Long id) {
-        return peliculaRepository.findById(id).orElseThrow(() -> new RuntimeException("Pelicula not found"));
+        return peliculaRepository.findById(id).orElseThrow(() -> new RuntimeException("Pelicula no encontrado"));
     }
 
     public Pelicula updatePelicula(Long id, Pelicula peliculaDetails) {
-        Pelicula pelicula = peliculaRepository.findById(id).orElseThrow(() -> new RuntimeException("Pelicula not found"));
+        Pelicula pelicula = peliculaRepository.findById(id).orElseThrow(() -> new RuntimeException("Pelicula no encontrado"));
         pelicula.setTitulo(peliculaDetails.getTitulo());
         pelicula.setDirector(peliculaDetails.getDirector());
         pelicula.setGenero(peliculaDetails.getGenero());
@@ -38,7 +38,7 @@ public class PeliculaService {
     }
 
     public void deletePelicula(Long id) {
-        Pelicula pelicula = peliculaRepository.findById(id).orElseThrow(() -> new RuntimeException("Pelicula not found"));
+        Pelicula pelicula = peliculaRepository.findById(id).orElseThrow(() -> new RuntimeException("Pelicula no encontrado"));
         peliculaRepository.delete(pelicula);
     }
 }
