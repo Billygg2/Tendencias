@@ -21,5 +21,5 @@ public class Venta {
 
     @OneToMany(mappedBy = "venta")
     private Set<DetalleVenta> detalleVentas;
-
+    
 }

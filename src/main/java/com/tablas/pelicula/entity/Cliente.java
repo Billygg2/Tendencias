@@ -7,8 +7,8 @@ import lombok.Data;
 import java.util.Date;
 import java.util.Set;
 
-@Data
 @Entity
+@Data
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,4 +23,5 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente")
     private Set<Venta> ventas;
 
+    
 }
